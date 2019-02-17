@@ -4,7 +4,6 @@ import ferro2000.immersivetech.ImmersiveTech;
 import ferro2000.immersivetech.api.craftings.BoilerRecipes;
 import ferro2000.immersivetech.api.craftings.DistillerRecipes;
 import ferro2000.immersivetech.api.craftings.SolarTowerRecipes;
-import ferro2000.immersivetech.common.blocks.metal.tileentities.TileEntitySolarTower;
 import net.minecraftforge.common.config.Config.Comment;
 import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
@@ -21,18 +20,18 @@ public class Config {
 			/*MULTIBLOCK*/
 			/*ENERGY*/
 			@Comment({"A modifier to apply to the burn time of steam into the SteamTurbine: ((1000 / steamBurnTime) / 2) * steamTurbine_burnTimeModifier mb/t [steamBurnTime = 50]"})
-			public static int steamTurbine_burnTimeModifier = 5;
+			public static int steamTurbine_burnTimeModifier = 20;
 			@Comment({"The max torque that the Steam Turbine can produce"})
 			public static int steamTurbine_maxTorque = 8192;
 			@Comment({"The max speed that the Steam Turbine can produce"})
 			public static int steamTurbine_maxSpeed = 6144;
 			
 			@Comment({"The max of Flux that the Alternator can store"})
-			public static int alternator_energyStorage = 1200000;
+			public static int alternator_energyStorage = 12000000;
 			@Comment({"A modifier to apply to the Flux production of the Alternator ((speed*torque) / modifier)"})
-			public static int alternator_RfModifier = 800;
+			public static int alternator_RfModifier = 300;
 			@Comment({"The max of Flux that the Alternator can output per each energy device connected"})
-			public static int alternator_RfPerTick = 4096;
+			public static int alternator_RfPerTick = 8192;
 			
 			/*BLOCK*/
 			/*ENERGY*/
@@ -51,7 +50,7 @@ public class Config {
 			@Comment({"A modifier to apply to the time of every Boiler recipe"})
 			public static int boiler_timeModifier = 1;
 			@Comment({"A modifier to apply to the burn time of fuel into the Boiler: (1000 / fuelBurnTime) * (4 * boiler_burnTimeModifier) mb/t {fuelBurnTime [biodiesel = 125], [fuel = 375], [diesel = 175]}"})
-			public static int boiler_burnTimeModifier = 1;
+			public static int boiler_burnTimeModifier = 3;
 			
 			/*MISC*/
 			@Comment({"The minimun distance between the Solar Tower and the Solar Reflectors"})
@@ -73,7 +72,7 @@ public class Config {
 		DistillerRecipes.timeModifier = ITConfig.Machines.distiller_timeModifier;
 		DistillerRecipes.energyModifier = ITConfig.Machines.distiller_energyModifier;
 		
-		BoilerRecipes.timeModifier = ITConfig.machines.boiler_timeModifier;
+		BoilerRecipes.timeModifier = ITConfig.Machines.boiler_timeModifier;
 		
 	}
 
