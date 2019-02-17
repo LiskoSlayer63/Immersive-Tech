@@ -88,13 +88,7 @@ public class ImmersiveTech {
 	public static CreativeTabs creativeTab = new CreativeTabs(MODID)
 	{
 		@Override
-		public ItemStack getTabIconItem()
-		{
-			return ItemStack.EMPTY;
-		}
-		@Override
-		public ItemStack getIconItemStack()
-		{
+		public ItemStack createIcon() {
 			return new ItemStack(IEContent.blockMetalDecoration0,1,6);
 		}
 	};

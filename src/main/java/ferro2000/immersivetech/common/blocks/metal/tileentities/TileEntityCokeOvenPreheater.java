@@ -52,7 +52,7 @@ public class TileEntityCokeOvenPreheater extends TileEntityIEBase implements IIE
 	@Override
 	public void readCustomNBT(NBTTagCompound nbt, boolean descPacket) {
 		dummy = nbt.getBoolean("dummy");
-		facing = EnumFacing.getFront(nbt.getInteger("facing"));
+		facing = EnumFacing.byIndex(nbt.getInteger("facing"));
 		energyStorage.readFromNBT(nbt);
 		active = nbt.getBoolean("active");
 		if(descPacket)

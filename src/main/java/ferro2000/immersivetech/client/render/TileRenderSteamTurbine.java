@@ -35,7 +35,7 @@ public class TileRenderSteamTurbine extends TileEntitySpecialRenderer<TileEntity
 			return;
 		}
 		
-		state = state.getBlock().getActualState(state, getWorld(), blockPos);
+		state = state.getActualState(getWorld(), blockPos);
 		state = state.withProperty(IEProperties.DYNAMICRENDER, true);
 		IBakedModel model = blockRenderer.getBlockModelShapes().getModelForState(state);
 		
@@ -58,7 +58,7 @@ public class TileRenderSteamTurbine extends TileEntitySpecialRenderer<TileEntity
 			GlStateManager.shadeModel(7424);
 		}
 		
-		GlStateManager.rotate(te.getAnimation().getAnimationRotation() + (te.getAnimation().getAnimationStep()*partialTicks), te.facing.getFrontOffsetX(), 0, te.facing.getFrontOffsetZ());
+		GlStateManager.rotate(te.getAnimation().getAnimationRotation() + (te.getAnimation().getAnimationStep()*partialTicks), te.facing.getXOffset(), 0, te.facing.getZOffset());
 		
 		worldRenderer.begin(GL11.GL_QUADS, DefaultVertexFormats.BLOCK);
 		worldRenderer.setTranslation( -.5-blockPos.getX(), -.5-blockPos.getY(),  -.5-blockPos.getZ());

@@ -202,16 +202,16 @@ public class TileEntityTimer extends TileEntityConnectorRedstone implements IGui
 	@Override
 	public Vec3d getRaytraceOffset(IImmersiveConnectable link) {
 		EnumFacing side = facing.getOpposite();
-		return new Vec3d(.5 + side.getFrontOffsetX() * .375, .5 + side.getFrontOffsetY() * .375,
-				.5 + side.getFrontOffsetZ() * .375);
+		return new Vec3d(.5 + side.getXOffset() * .375, .5 + side.getYOffset() * .375,
+				.5 + side.getZOffset() * .375);
 	}
 
 	@Override
 	public Vec3d getConnectionOffset(Connection con) {
 		EnumFacing side = facing.getOpposite();
 		double conRadius = con.cableType.getRenderDiameter() / 2;
-		return new Vec3d(.5 + side.getFrontOffsetX() * (.375 - conRadius),
-				.5 + side.getFrontOffsetY() * (.375 - conRadius), .5 + side.getFrontOffsetZ() * (.375 - conRadius));
+		return new Vec3d(.5 + side.getXOffset() * (.375 - conRadius),
+				.5 + side.getYOffset() * (.375 - conRadius), .5 + side.getZOffset() * (.375 - conRadius));
 	}
 
 	@Override
@@ -275,7 +275,7 @@ public class TileEntityTimer extends TileEntityConnectorRedstone implements IGui
 		return new String[] {
 				I18n.format(Lib.DESC_INFO + "redstoneChannel.send",
 						I18n.format("item.fireworksCharge."
-								+ EnumDyeColor.byMetadata(redstoneChannelSending).getUnlocalizedName())),
+								+ EnumDyeColor.byMetadata(redstoneChannelSending).getTranslationKey())),
 				I18n.format(String.valueOf(time).toString() + " Sec.") };
 	}
 

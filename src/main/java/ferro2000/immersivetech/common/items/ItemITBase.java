@@ -22,7 +22,7 @@ public class ItemITBase extends Item implements IColouredItem
 
 	public ItemITBase(String name, int stackSize, String... subNames)
 	{
-		this.setUnlocalizedName(ImmersiveTech.MODID+"."+name);
+		this.setTranslationKey(ImmersiveTech.MODID+"."+name);
 		this.setHasSubtypes(subNames!=null&&subNames.length>0);
 		this.setCreativeTab(ImmersiveTech.creativeTab);
 		this.setMaxStackSize(stackSize);
@@ -53,14 +53,14 @@ public class ItemITBase extends Item implements IColouredItem
 
 	}
 	@Override
-	public String getUnlocalizedName(ItemStack stack)
+	public String getTranslationKey(ItemStack stack)
 	{
 		if(getSubNames()!=null)
 		{
 			String subName = stack.getItemDamage()<getSubNames().length?getSubNames()[stack.getItemDamage()]:"";
-			return this.getUnlocalizedName()+"."+subName;
+			return this.getTranslationKey()+"."+subName;
 		}
-		return this.getUnlocalizedName();
+		return this.getTranslationKey();
 	}
 
 	public ItemITBase setMetaHidden(int... meta)

@@ -24,7 +24,7 @@ public class BlockITFluid extends BlockFluidClassic {
 
 	public BlockITFluid(String name, Fluid fluid, Material material) {
 		super(fluid, material);
-		this.setUnlocalizedName(ImmersiveTech.MODID + "." + name);
+		this.setTranslationKey(ImmersiveTech.MODID + "." + name);
 		this.setCreativeTab(ImmersiveTech.creativeTab);
 		// ImmersiveTech.registerBlock(this, ItemBlock.class, name);
 		ITContent.registeredITBlocks.add(this);
@@ -57,7 +57,7 @@ public class BlockITFluid extends BlockFluidClassic {
 	}
 
 	@Override
-	public void onEntityCollidedWithBlock(World world, BlockPos pos, IBlockState state, Entity entity) {
+	public void onEntityCollision(World world, BlockPos pos, IBlockState state, Entity entity) {
 		if (potionEffects != null && entity instanceof EntityLivingBase) {
 			for (PotionEffect effect : potionEffects)
 				if (effect != null)
