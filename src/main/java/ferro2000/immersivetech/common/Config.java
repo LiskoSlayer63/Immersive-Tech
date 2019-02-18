@@ -29,7 +29,7 @@ public class Config {
 			@Comment({"The max of Flux that the Alternator can store"})
 			public static int alternator_energyStorage = 12000000;
 			@Comment({"A modifier to apply to the Flux production of the Alternator ((speed*torque) / modifier)"})
-			public static int alternator_RfModifier = 32;
+			public static int alternator_RfModifier = 300;
 			@Comment({"The max of Flux that the Alternator can output per each energy device connected"})
 			public static int alternator_RfPerTick = 8192;
 			
