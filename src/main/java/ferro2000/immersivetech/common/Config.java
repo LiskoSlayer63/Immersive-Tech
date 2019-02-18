@@ -19,8 +19,8 @@ public class Config {
 			
 			/*MULTIBLOCK*/
 			/*ENERGY*/
-			@Comment({"A modifier to apply to the burn time of steam into the SteamTurbine: ((1000 / steamBurnTime) / 2) * steamTurbine_burnTimeModifier mb/t [steamBurnTime = 50]"})
-			public static int steamTurbine_burnTimeModifier = 20;
+			@Comment({"A modifier to apply to the burn time of steam into the SteamTurbine: (1000 / (burnTime * 2)) * steamTurbine_burnTimeModifier mb/t [steamBurnTime = 50]"})
+			public static int steamTurbine_burnTimeModifier = 5;
 			@Comment({"The max torque that the Steam Turbine can produce"})
 			public static int steamTurbine_maxTorque = 8192;
 			@Comment({"The max speed that the Steam Turbine can produce"})
@@ -29,7 +29,7 @@ public class Config {
 			@Comment({"The max of Flux that the Alternator can store"})
 			public static int alternator_energyStorage = 12000000;
 			@Comment({"A modifier to apply to the Flux production of the Alternator ((speed*torque) / modifier)"})
-			public static int alternator_RfModifier = 300;
+			public static int alternator_RfModifier = 32;
 			@Comment({"The max of Flux that the Alternator can output per each energy device connected"})
 			public static int alternator_RfPerTick = 8192;
 			

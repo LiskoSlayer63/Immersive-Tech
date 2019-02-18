@@ -88,7 +88,7 @@ public class TileEntitySteamTurbine extends TileEntityMultiblockMetal<TileEntity
 
 				if (burnTime > 0) {
 
-					int fluidConsumed = ((1000 / burnTime) / 2) * ITConfig.Machines.steamTurbine_burnTimeModifier;
+					int fluidConsumed = (1000 / (burnTime * 2)) * ITConfig.Machines.steamTurbine_burnTimeModifier;
 
 					if (tanks[0].getFluidAmount() >= fluidConsumed) {
 
